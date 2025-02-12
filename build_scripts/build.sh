@@ -60,6 +60,11 @@ if [ "$ENABLE_HWE" == "1" ]; then
 	run_buildscripts_for "$(arch)/hwe"
 fi
 
+if [ "$ENABLE_RPI" == "1" ] ; then
+	copy_systemfiles_for "rpi"
+	run_buildscripts_for "rpi"
+fi
+
 
 # Ensure these get run at the _end_ of the build no matter what
 /var/tmp/build_scripts/cleanup.sh
